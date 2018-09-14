@@ -1,5 +1,7 @@
-var { getUserInfo, registerNewUser } = require('./controller');
+var { userModel, getAllUser, getSingleUser } = require('./controller');
 module.exports = {
-    getUserInfo,
-    registerNewUser
+    userModel,
+    getAllUser,
+    getSingleUser,
+    // registerNewUser
 }
