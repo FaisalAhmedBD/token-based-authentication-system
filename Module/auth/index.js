@@ -1,5 +1,7 @@
-var { registerNewUser, login } = require('./contoller');
+var { registerNewUser, me, login, logout } = require('./contoller');
 module.exports = {
     registerNewUser,
-    login
+    me,
+    login,
+    logout
 }

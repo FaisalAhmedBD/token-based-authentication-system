@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
     res.send('So far good');
 })
 app.use('/v1', router);
-app.listen(3001, () => {
+app.listen(8000, () => {
     console.log('app listening to port number 3001');
 })
