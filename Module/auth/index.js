@@ -1,7 +1,10 @@
-var { registerNewUser, me, login, logout } = require('./contoller');
+var { registerNewUser, me, login, logout, customMiddleware } = require('./contoller');
+var { verifyToken } = require('./verifyToken');
 module.exports = {
     registerNewUser,
     me,
     login,
-    logout
+    logout,
+    verifyToken,
+    customMiddleware
 }
