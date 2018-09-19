@@ -25,20 +25,17 @@ var registerNewUser = (req, res) => {
 
 var me = (req, res, next) => {
     console.log('me function ');
-    // const token = req.headers['x-access-token'];
-    // if (!token)
-    //     return res.status(401).send({ auth: false, message: 'no token provided' });
-    // jwt.verify(token, secretKey.secret, (error, decoded) => {
-    //     if (error)
-    //         res.status(500).send({ auth: false, message: 'Failed to authenticate token' });
-    // })
-
     userModel.findById(req.userId, { password: 0 }, (error, user) => {
         if (error)
             return res.status(500).send('there was a problem finding the user');
         if (!user)
             return res.status(404).send('No user found');
-        res.status(200).send(user);
+
+        let data = {
+            user: user,
+            fa: res.faisal
+        }
+        res.status(200).send(data);
 
     })
 }
